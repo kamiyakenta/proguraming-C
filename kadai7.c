@@ -6,6 +6,8 @@ int main(void){
   int i, j;
   int flag = 0;
   int count =0;
+  int k = 0;
+  int a[N];
   scanf("%d", &n);
   int S[n];
   for(i = 0; i < n; i++){
@@ -17,10 +19,8 @@ int main(void){
   for(i = 0; i < q; i++){
     scanf("%d", &T[i]);
   }
-  printf("\n");
 
   //入力完了
-
   for(i = 0; i < q; i++){
     for(j = 0; j < n; j++){
       if(T[i] == S[j]){
@@ -31,13 +31,22 @@ int main(void){
       }
     }
     if(flag == 1){
+      a[count] = T[i];
       count++;
-      printf("%d ", T[i]);
       flag = 0;
     }
   }
-  printf("\n");
-  printf("%d\n", count);
-
+  for(k=0; k<count; k++){
+    if(k != count-1){
+      printf("%d ", a[k]);
+    }else{
+      printf("%d\n", a[k]);
+    }
+  }
+  if (count == 0){
+      printf("\n%d\n", count);
+  }else{
+      printf("%d\n", count);
+  }
   return 0;
 }
