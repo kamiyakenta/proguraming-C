@@ -8,6 +8,7 @@ int main(void){
   int count =0;
   int k = 0;
   int a[N];
+
   scanf("%d", &n);
   int S[n];
   for(i = 0; i < n; i++){
@@ -19,8 +20,8 @@ int main(void){
   for(i = 0; i < q; i++){
     scanf("%d", &T[i]);
   }
-
   //入力完了
+
   for(i = 0; i < q; i++){
     for(j = 0; j < n; j++){
       if(T[i] == S[j]){
@@ -36,6 +37,7 @@ int main(void){
       flag = 0;
     }
   }
+
   for(k=0; k<count; k++){
     if(k != count-1){
       printf("%d ", a[k]);
@@ -43,10 +45,12 @@ int main(void){
       printf("%d\n", a[k]);
     }
   }
+
   if (count == 0){
       printf("\n%d\n", count);
   }else{
       printf("%d\n", count);
   }
+
   return 0;
 }
