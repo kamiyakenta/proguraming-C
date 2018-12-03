@@ -1,3 +1,15 @@
+// 以下の命令を受け付ける双方向連結リストを実装しなさい。
+
+// insertFirst x 先頭に要素の継ぎ足し
+// insertLast x 末尾に要素の継ぎ足し
+// delete x キーxを持つ最初の要素を削除
+// deleteFirst 先頭の要素を削除
+// deleteLast 末尾の要素を削除
+// deleteAll 全要素の削除
+
+// 入力: 最初の行に命令数n、続くn行においてそれぞれ命令。
+// 出力: 全ての命令が修了した後の連結リスト内のキーの空白区切りによる連続した出力および改行。
+
 import java.util.*;
 
 public class Kadai6{

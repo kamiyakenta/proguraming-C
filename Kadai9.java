@@ -1,3 +1,11 @@
+// 以下の命令を実行する簡易的な入れ物を実装しなさい。
+// add str : 文字列 strを登録
+// remove str: 文字列 strが登録済みの場合は登録削除
+// find str : 文字列 strが登録済みの場合は yes 、さもなくば no と出力
+
+// 入力: 最初の行に命令の数 nが与えられる。続くn行にn件の命令。
+// 出力: 各find命令の実行結果として yes または no を1行に出力して改行。
+
 import java.util.*;
 
 public class Kadai9 {
