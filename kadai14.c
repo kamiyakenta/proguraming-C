@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char A[10][6] = {
+char btn[10][6] = {
   {'0'},
   {'.', ',', '!', '?', ' '},
   {'a', 'b', 'c'},
@@ -16,11 +16,11 @@ char A[10][6] = {
 
 
 int main(void) {
-  int i, c;
+  int i, w;
   int n;
-  char input[80];
+  char input[1000];
   int index;
-  char pre_c = 'a';
+  char pre_w = ' '; //とりあえず何か入れておく
 
   scanf("%d", &n);
 
@@ -28,16 +28,16 @@ int main(void) {
     scanf("%s", input);
     index = 0;
 
-    for (c = 0; c < strlen(input); c++) {
+    for (w = 0; w < strlen(input); w++) {
 
-      if (input[c] == pre_c) {
+      if (input[w] == pre_w) {
         index++;
-      } else if (input[c] == '0') {
-        printf("%c", A[pre_c - '0'][index % strlen(A[pre_c - '0'])]);
+      } else if (input[w] == '0') {
+        printf("%c", btn[pre_w - '0'][index % strlen(btn[pre_w - '0'])]);
         index = 0;
-        pre_c = '0';
+        pre_w = '0';
       } else {
-        pre_c = input[c];
+        pre_w = input[w];
       }
     }
     printf("\n");
