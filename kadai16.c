@@ -1,17 +1,20 @@
 #include <stdio.h>
-#include <math.h>
 
-int main(void){
+long factorial(int n) {
+  if (n == 0 || n == 1) return 1;
+  else return n * factorial(n-1);
+}
+
+int main(void) {
+
   int m, n;
-  double ext;
-  double ans;
+  long ans;
 
   scanf("%d %d", &m, &n);
 
-  ext = m - n;
-  ans = pow((double)n, ext);
+  ans = factorial(m-1) / (factorial(m-n) * factorial(n-1));
 
-  printf("%d\n", (int)ans);
+  printf("%ld\n", ans);
 
   return 0;
 }
