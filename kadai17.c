@@ -10,26 +10,29 @@
 // 出力例:
 // 3
 
+
+//二分探索木で考える
 #include <stdio.h>
 
+//levelは木の高さ、yesは現時点でのyesの個数、Nは問題数、Mは連続してでてほしいyesの数
 int bst(int level, int yes, int N, int M) {
 
-  if (yes == M) {
-    return 1 << N - level;
-  } else if (level >= N) {
-    return 0;
-  } else {
-    return bst(level+1, yes+1, N, M) + bst(level+1, 0, N, M);
-  }
+  if(yes == M) return 1 << (N - level);
+  //1をN分左シフトしてからlevelで引く   pow(回答の種類, 問題数ー判定してないレベル)
+  else if(level >= N) return 0;
+  else return bst(level+1, yes+1, N, M) + bst(level+1, 0, N, M);
+
 }
 
 int main(void) {
 
   int N, M;
-
+  int ans;
   scanf("%d %d", &N, &M);
 
-  printf("%d\n", bst(0,0,N,M));
+  ans = bst(0, 0, N, M);
+
+  printf("%d\n", ans);
 
   return 0;
 }
