@@ -74,10 +74,6 @@ int main(void) {
 
   scanf("%d", &n);
   node = (Node *)malloc(sizeof(Node) * n);
-  if (node == NULL) {
-    printf("error\n");
-    exit(1);
-  }
 
   node[0].parent_number = -1;
   node[0].brother_number = -1;
@@ -90,17 +86,19 @@ int main(void) {
       node[number].child = 2;
       node[number].child_number[0] = left_number;
       node[number].child_number[1] = right_number;
+
       node[left_number].number = left_number;
       node[left_number].parent_number = number;
       node[left_number].brother_number = right_number;
       node[left_number].depth = node[number].depth + 1;
+
       node[right_number].number = right_number;
       node[right_number].parent_number = number;
       node[right_number].brother_number = left_number;
       node[right_number].depth = node[number].depth + 1;
     } else {
       node[number].child = 0;
-
+    }
   }
 
   for (i = 0; i < n; i++) {
